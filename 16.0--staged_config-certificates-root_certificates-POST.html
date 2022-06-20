@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2022">
+
+
+
+<meta name="description" content="Uploads a new single root certificate to the staged configuration folder on the Console. This API enables the deployment of new root certificates to managed hosts, which enables the TLS handshake between a managed host and a destination device.">
+<meta name="keywords" content="/staged_config/certificates/root_certificates, POST, API, REST API">
+<meta name="geo.country" content="ZZ">
+<script>
+    digitalData = {
+      page: {
+        pageInfo: {
+  language: "en-us",
+
+  version: "v18",
+  ibm: {
+  country: "ZZ",
+  type: "CT701"
+  
+         }
+       }
+     }
+   };
+  </script><!-- Licensed Materials - Property of IBM -->
+<!-- US Government Users Restricted Rights -->
+<!-- Use, duplication or disclosure restricted by -->
+<!-- GSA ADP Schedule Contract with IBM Corp. -->
+<link rel="stylesheet" type="text/css" href="ibmdita.css">
+<link rel="Start" href="c_rest_api_version160_staged_config_intro.html">
+<title>POST /staged_config/certificates/root_certificates</title>
+</head>
+<body id="api-16.0--staged_config-certificates-root_certificates-POST"><main role="main"><article role="article" aria-labelledby="d247175e10">
+<h1 class="topictitle1" id="d247175e10">POST /staged_config/certificates/root_certificates</h1>
+
+
+
+<div class="body refbody"><p class="shortdesc">Uploads a new single root certificate to the staged configuration folder on the Console. This API enables the deployment of new root certificates to managed hosts, which enables the TLS handshake between a managed host and a destination device.
+ </p>
+
+<div class="section refsyn"><div class="p">The following steps are required to push the root certificate to the managed host:
+  <ul>
+   <li>Invoke this synchronous endpoint to upload the new single root certificate to the staged configuration folder on the Console.</li>
+
+   <li>Deploy the changes to push the new root certificate to the managed host.</li>
+
+  </ul>
+
+  </div>
+
+ <p>You must have System Administrator permissions to use this endpoint.</p>
+</div>
+
+<div class="section refsyn">
+
+<div class="tablenoborder"><table summary="POST /staged_config/certificates/root_certificates resource details" class="defaultstyle"><caption><span class="tablecap">Table 1. POST /staged_config/certificates/root_certificates resource details</span></caption><colgroup><col style="width:100%"></colgroup><thead style="text-align:left;">
+<tr style="vertical-align:bottom;">
+<th id="d247175e74" class="thbot">MIME Type</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d247175e74 "><p>application/json
+</p>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div class="section refsyn">
+
+<div class="tablenoborder"><table summary="POST /staged_config/certificates/root_certificates request parameter details" class="defaultstyle"><caption><span class="tablecap">Table 2. POST /staged_config/certificates/root_certificates request parameter details</span></caption><colgroup><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"></colgroup><thead style="text-align:left;">
+<tr style="vertical-align:bottom;">
+<th id="d247175e122" class="thbot">Parameter</th>
+
+<th id="d247175e125" class="thbot">Type</th>
+
+<th id="d247175e128" class="thbot">Optionality</th>
+
+<th id="d247175e131" class="thbot">Data Type</th>
+
+<th id="d247175e134" class="thbot">MIME Type</th>
+
+<th id="d247175e138" class="thbot">Description</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d247175e122 "><p>fields</p>
+</td>
+
+<td headers="d247175e125 "><p>header</p>
+</td>
+
+<td headers="d247175e128 "><p>Optional</p>
+</td>
+
+<td headers="d247175e131 "><p>String</p>
+</td>
+
+<td headers="d247175e134 "><p>text/plain</p>
+</td>
+
+<td headers="d247175e138 "><p>Optional - Use this parameter to specify which fields you would like to get back in the response. Fields that are not named are excluded. Specify subfields in brackets and multiple fields in the same object are separated by commas.</p>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div class="section refsyn">
+
+<div class="tablenoborder"><table summary="POST /staged_config/certificates/root_certificates request body details" class="defaultstyle"><caption><span class="tablecap">Table 3. POST /staged_config/certificates/root_certificates request body details</span></caption><colgroup><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:14.285714285714285%"><col style="width:28.57142857142857%"><col style="width:28.57142857142857%"></colgroup><thead style="text-align:left;">
+<tr style="vertical-align:bottom;">
+<th id="d247175e205" class="thbot">Parameter</th>
+
+<th id="d247175e208" class="thbot">Data Type</th>
+
+<th id="d247175e211" class="thbot">MIME Type</th>
+
+<th id="d247175e214" class="thbot">Description</th>
+
+<th id="d247175e217" class="thbot">Sample</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d247175e205 "><p>certificate_content</p>
+</td>
+
+<td headers="d247175e208 "><p>String</p>
+</td>
+
+<td headers="d247175e211 "><p>text/plain</p>
+</td>
+
+<td headers="d247175e214 "><p>Required. The contents of a single PEM-encoded x509 root certificate to be uploaded to the Console.</p>
+</td>
+
+<td headers="d247175e217 "><p>String</p>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+<div class="section refsyn">
+
+<div class="tablenoborder"><table summary="POST /staged_config/certificates/root_certificates response codes" class="defaultstyle"><caption><span class="tablecap">Table 4. POST /staged_config/certificates/root_certificates response codes</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead style="text-align:left;">
+<tr style="vertical-align:bottom;">
+<th id="d247175e274" class="thbot">HTTP Response Code</th>
+
+<th id="d247175e277" class="thbot">Unique Code</th>
+
+<th id="d247175e280" class="thbot">Description</th>
+
+</tr>
+
+</thead>
+<tbody>
+<tr>
+<td headers="d247175e274 "><p>200</p>
+</td>
+
+<td headers="d247175e277 "><p></p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate has been uploaded.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>409</p>
+</td>
+
+<td headers="d247175e277 "><p>1102</p>
+</td>
+
+<td headers="d247175e280 "><p>Certificate already exists.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>1101</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate is invalid.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2001</p>
+</td>
+
+<td headers="d247175e280 "><p>Error parsing a certificate</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2002</p>
+</td>
+
+<td headers="d247175e280 "><p>Error parsing a certificate</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2003</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate is expired</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2004</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate is not yet valid</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2005</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate is revoked</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2010</p>
+</td>
+
+<td headers="d247175e280 "><p>Unexpected error occurred when processing a certificate</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2011</p>
+</td>
+
+<td headers="d247175e280 "><p>Error finding issuer certificates</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2012</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate's key usage or extended key usage does not match to its purpose</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2013</p>
+</td>
+
+<td headers="d247175e280 "><p>Error validating the full chain of the certificate</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2014</p>
+</td>
+
+<td headers="d247175e280 "><p>The certificate is an invalid self-signed certificate</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2020</p>
+</td>
+
+<td headers="d247175e280 "><p>The CRL is invalid</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2030</p>
+</td>
+
+<td headers="d247175e280 "><p>Unexpected error when processing CRL</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2031</p>
+</td>
+
+<td headers="d247175e280 "><p>Error finding the issuer certificates for the CRL</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2032</p>
+</td>
+
+<td headers="d247175e280 "><p>The issuer does not have CRL signing authority.</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2033</p>
+</td>
+
+<td headers="d247175e280 "><p>Error validating the CRL</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>422</p>
+</td>
+
+<td headers="d247175e277 "><p>2034</p>
+</td>
+
+<td headers="d247175e280 "><p>The CRL is expired</p>
+</td>
+
+</tr>
+
+<tr>
+<td headers="d247175e274 "><p>500</p>
+</td>
+
+<td headers="d247175e277 "><p>1020</p>
+</td>
+
+<td headers="d247175e280 "><p>for unknown exception error code 500</p>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+<section class="section refsyn" role="region" aria-labelledby="d247175e596"><h2 class="sectiontitle" id="d247175e596">Response Description</h2>
+
+<div class="p">Displays the following information about the certificate resource:
+ 	<ul>
+	<li><strong>id</strong> - Uniquely identifies the certificate. This value is derived from subject_key_id.</li>
+
+	<li><strong>subject_key_id</strong> - Returns the Subject Key Identifier of the CA certificate.</li>
+
+	<li><strong>authority_key_id</strong> - Returns the Authority Key Identifier of the CA certificate.</li>
+
+	<li><strong>subject</strong> - Returns the Subject of the CA certificate.	</li>
+
+	<li><strong>issuer</strong> - Returns the Issuer of the CA certificate.</li>
+
+	<li><strong>not_before</strong> - Returns the "Validity Not Before" field of the certificate, represented as the number of milliseconds since UNIX epoch. </li>
+
+      <li><strong>expiry</strong> - Returns the "Validity Not After" field of the certificate, represented as the number of milliseconds since UNIX epoch.&nbsp;</li>
+
+      <li><strong>status</strong> - Returns the status of the certificate. After you upload the certificate, the value will be DEPLOY_PENDING to indicate that the changes must be deployed.</li>
+
+      <li><strong>validation</strong> - Returns the code to indicate whether the certificate is valid. If not, it returns the reason that the certificate is not valid.
+      	<ul>
+                <li>0 - Certificate is valid or has not been checked. </li>
+
+                <li>2001 - Error parsing a certificate.</li>
+
+                <li>2002 - Error decoding a certificate.</li>
+
+                <li>2003 - The certificate is expired.</li>
+
+                <li>2004 - The certificate is not yet valid.</li>
+
+                <li>2005 - The certificate is revoked.</li>
+
+                <li>2010 - An unexpected error occurred when processing a certificate.</li>
+
+                <li>2011 - Error finding the issuer certificates.</li>
+
+                <li>2012 - The certificate's key usage or extended key usage does not match its purpose.</li>
+
+                <li>2013 - Error validating the full chain of the certificate.</li>
+
+                <li>2014 - The certificate is an invalid self-signed certificate.</li>
+
+                <li>2020 - The CRL is invalid.</li>
+
+                <li>2030 - Unexpected error when processing the CRL.</li>
+
+                <li>2031 - Error finding the issuer certificates for the CRL.</li>
+
+                <li>2032 - The issuer does not have the CRL sign usage.</li>
+
+                <li>2033 - Error validating the CRL.</li>
+
+                <li>2034 - The CRL is expired.</li>
+
+	        </ul>
+</li>
+
+        </ul>
+</div>
+
+</section>
+
+<section class="section refsyn" role="region" aria-labelledby="d247175e708"><h2 class="sectiontitle" id="d247175e708">Response Sample</h2>
+
+<pre class="codeblock"><code>
+{
+    "authority_key_id": "String",
+    "expiry": 42,
+    "id": "String",
+    "issuer": [
+        {
+            "field_name": "String",
+            "value": "String"
+        }
+    ],
+    "not_before": 42,
+    "status": "String",
+    "subject": [
+        {
+            "field_name": "String",
+            "value": "String"
+        }
+    ],
+    "subject_key_id": "String",
+    "validation": 42
+}
+</code></pre>
+</section>
+
+</div>
+
+<aside role="complementary" aria-labelledby="d247175e10"><nav role="navigation">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a href="c_rest_api_version160_staged_config_intro.html" title="Use the references for REST API 16.0 staged_config endpoints.">staged_config endpoints</a></div>
+</div>
+</nav></aside></article></main></body></html>
